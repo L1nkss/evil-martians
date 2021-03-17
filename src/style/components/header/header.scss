@@ -1,0 +1,73 @@
+/* ==[ ЗАГОЛОВОК СТРАНИЦЫ ]== */
+
+
+$avatar-size: 50px;
+$user-background: $cl-white-1;
+
+.header {
+  background-color: $cl-white;
+
+  &__information {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user-profile {
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    align-self: normal;
+    cursor: pointer;
+    padding: 12px 13px;
+    max-width: 200px;
+    font-weight: 700;
+
+    &:hover {
+      background-color: $user-background;
+
+      .header__menu {
+        display: block;
+      }
+
+      .header__user-profile-avatar {
+        border-color: $cl-blue-2;
+      }
+    }
+  }
+
+  &__user-profile-avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  &__user-profile-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $user-background;
+    display: none;
+  }
+
+  &__menu-item {
+    padding: 12px 13px;
+
+    &:hover {
+      color: $cl-blue-2;
+    }
+  }
+
+  &__menu-title {
+    margin-left: 12px;
+  }
+}

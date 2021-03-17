@@ -1,0 +1,119 @@
+/* ==[ LOADER ]== */
+
+$loader-width: 100px;
+$loader-circle-color: $cl-grayscale-2;
+$loader-success-color: $cl-green-2;
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    border-top: 5px solid $loader-circle-color;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top: 5px solid $loader-circle-color;
+
+  }
+}
+
+@keyframes baseGrow {
+  0% {
+
+    width: 0;
+  }
+  90% {
+    width: 0;
+  }
+  100% {
+    width: 44px;
+  }
+}
+
+@keyframes tipGrow {
+  0% {
+    width: 0;
+    left: 0;
+    top: 0;
+  }
+  25% {
+    width: 0;
+    left: 0;
+    top: 0;
+  }
+  50% {
+    top: 0;
+    left: 0;
+    width: 0;
+  }
+  75% {
+    top: 0;
+    left: 0;
+    width: 0;
+  }
+  100% {
+    top: 65%;
+    left: 50%;
+    width: 24px;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: $cl-white;
+  width: 100%;
+  height: 100%;
+
+  &__inner {
+    position: absolute;
+    content: '';
+    top: calc(50% - #{$loader-width} / 2);
+    left: calc(50% - #{$loader-width} / 2);
+    width: $loader-width;
+    height: $loader-width;
+    border-radius: 50%;
+    border: 5px solid $cl-purple-1;
+    box-shadow: 0 0 .6px rgba($cl-black, .3);
+    animation: spin 1s linear infinite;
+    transition: 0.3s;
+  }
+
+  &__success {
+    background-color: $loader-success-color;
+    border-color: $loader-success-color;
+
+    &.loader__inner {
+      animation: none;
+    }
+
+    &::before {
+      height: 7px;
+      width: 44px;
+      position: absolute;
+      top: 65%;
+      left: 40px;
+      background-color: green;
+      transform: rotate(-45deg);
+      transform-origin: 0 50%;
+      border-radius: 5px;
+      animation: baseGrow 1s;
+      content: '';
+    }
+
+    &::after {
+      height: 7px;
+      width: 24px;
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      background-color: green;
+      transform: rotate(-135deg);
+      transform-origin: 0 50%;
+      border-radius: 5px;
+      animation: tipGrow 1s;
+      content:'';
+    }
+  }
+}

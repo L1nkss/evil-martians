@@ -1,0 +1,17 @@
+/* ==[ ВИДЖЕТ ]== */
+
+.widget {
+  position: relative;
+  background-color: $cl-white;
+  border-radius: 15px;
+  padding: 80px 78px;
+  max-width: 420px;
+  min-width: 280px;
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: .6s;
+
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 48px 24px;
+  }
+}

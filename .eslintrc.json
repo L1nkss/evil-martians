@@ -1,0 +1,22 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "airbnb",
+        "airbnb/hooks"
+    ],
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "react/jsx-props-no-spreading": "off",
+        "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+        "react-hooks/exhaustive-deps": "warn", // Проверяем зависимости эффекта
+        "jsx-a11y/label-has-associated-control": ["error", {
+            "required": {
+                "some": [ "nested", "id"]
+            }
+        }]
+    }
+}

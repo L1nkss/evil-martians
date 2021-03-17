@@ -1,0 +1,16 @@
+/* ==[ APP ]== */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__inner-wrapper {
+    width: 100%;
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
